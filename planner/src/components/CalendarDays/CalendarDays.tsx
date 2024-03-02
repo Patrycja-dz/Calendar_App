@@ -35,7 +35,7 @@ const CalendarDays = ({ day, changeCurrentDay }) => {
               (calendarDay.currentMonth ? "bg-gray-100 w-2/5" : "") +
               (calendarDay.selected ? " bg-blue-500 text-white w-16" : "")
             }
-            onClick={() => changeCurrentDay(calendarDay)}
+            // onClick={() => changeCurrentDay(calendarDay)}
             key={calendarDay.date.toISOString()} // Add a unique key
           >
             <p>{calendarDay.number}</p>

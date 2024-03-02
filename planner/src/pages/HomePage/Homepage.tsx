@@ -2,25 +2,42 @@ import ActivityHub from "../../components/ActivityHub/ActivityHub";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import Dashboard from "../../components/Dashboard/Dashboard";
+import CalendarDays from "../../components/CalendarDays/CalendarDays";
+import { useState } from "react";
+import Timeline from "../../components/Timeline.tsx/Timeline";
 const Homepage = () => {
+  const hours = Array.from({ length: 18 }, (_, i) => i + 7);
+  const [currentDay, setCurrentDay] = useState(new Date());
+  const dummyEvents = [
+    { day: 0, startHour: 8, endHour: 16, title: "Work" },
+    { day: 2, startHour: 12, endHour: 13, title: "Lunch" },
+  ];
+  const changeCurrentDay = (day) => {
+    setCurrentDay(new Date(day.year, day.month, day.number));
+  };
   return (
     <>
       <Navbar />
       <ActivityHub />
-      <div className="hero min-h-screen max-w-full bg-base-200 flex flex-col">
-        <div className="hero-content text-center">
-          {/* <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Hello there</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button className="btn btn-primary">Get Started</button> */}
+
+      <div className="flex flex-col">
+        <div className="flex">
+          {hours.map((hour) => (
+            <div key={hour} className="w-1/5 h-9 p-2 border border-gray-300">
+              {`${hour}:00`}
+            </div>
+          ))}
+        </div>
+        <div className="flex">
+          <CalendarDays day={currentDay} changeCurrentDay={changeCurrentDay} />
           <Dashboard />
-          {/* § */}
         </div>
       </div>
+      {/* 
+      <div className="hero min-h-screen  bg-base-200 flex flex-col">
+        <Dashboard />
+          </div> */}
+
       <Footer />
     </>
   );
