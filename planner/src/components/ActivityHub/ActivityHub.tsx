@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 const ActivityHub = () => {
   return (
     <div role="tablist" className="tabs  tabs-lg">
-      <a role="tab" className="tab text-violet-700">
+      <Link role="tab" className="tab text-violet-700" to={"create-event"}>
         Dodaj wydarzenie
-      </a>
-      <a role="tab" className="tab  text-violet-700">
+      </Link>
+      <Link role="tab" className="tab  text-violet-700">
         Moje zaproszenia
-      </a>
+      </Link>
     </div>
   );
 };

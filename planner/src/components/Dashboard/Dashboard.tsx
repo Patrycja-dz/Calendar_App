@@ -8,11 +8,7 @@ const Dashboard = () => {
     { day: 4, startHour: 12, endHour: 14, title: "Meeting" },
   ];
 
-  return (
-    <div className="">
-      <Timeline events={dummyEvents} />
-    </div>
-  );
+  return <Timeline events={dummyEvents} />;
 };
 
 export default Dashboard;
