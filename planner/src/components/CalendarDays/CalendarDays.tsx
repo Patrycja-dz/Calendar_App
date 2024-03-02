@@ -1,6 +1,4 @@
-import React from "react";
-
-const CalendarDays = ({ day, changeCurrentDay }) => {
+const CalendarDays = ({ day }) => {
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let firstDayOfWeek = new Date(
@@ -31,12 +29,11 @@ const CalendarDays = ({ day, changeCurrentDay }) => {
         {currentDays.map((calendarDay) => (
           <div
             className={
-              "max-w-sm p-6 border border-gray-300 flex-grow w-16 justify-center items-center" +
-              (calendarDay.currentMonth ? "bg-gray-100 w-2/5" : "") +
-              (calendarDay.selected ? " bg-blue-500 text-white w-16" : "")
+              "max-w-sm p-4 text-center border border-gray-300 w-12 flex-grow justify-center align-center" +
+              (calendarDay.currentMonth ? "bg-gray-100 w-12" : "") +
+              (calendarDay.selected ? " bg-blue-500 text-white w-12" : "")
             }
-            // onClick={() => changeCurrentDay(calendarDay)}
-            key={calendarDay.date.toISOString()} // Add a unique key
+            key={calendarDay.date.toISOString()}
           >
             <p>{calendarDay.number}</p>
             <p className="text-xs text-gray-600">{calendarDay.weekday}</p>
