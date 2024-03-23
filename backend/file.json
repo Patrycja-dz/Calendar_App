@@ -1,55 +1,60 @@
 {
-	"users": {
-		"user":[
-			{
-				"id": 1,
-				"name": "Agata",
-				"events": [1,2,5]
-			},
-			{
-				"id": 2,
-				"name": "Tomek",
-				"events": [1,3,5]
-			},
-			{
-				"id": 3,
-				"name": "Kasia",
-				"events": [2,3,5]
-			}
-		]
-	},		
-	"events":{
-		"event":[
-			{
-				"id": 1,
-				"name": "Kawa",
-				"time": "15:30-17:00",
-				"date": "12.03.2024"
-			},
-			{
-				"id": 2,
-				"name": "Lunch",
-				"time": "12:30-13:30",
-				"date": "12.03.2024"
-			},
-			{
-				"id": 3,
-				"name": "Siłownia",
-				"time": "17:30-19:00",
-				"date": "12.03.2024"
-			},
-			{
-				"id": 4,
-				"name": "Kino",
-				"time": "21:30-23:00",
-				"date": "12.03.2024"
-			},
-			{
-				"id": 5,
-				"name": "Praca",
-				"time": "7:30-15:50",
-				"date": "12.03.2024"
-			}
-		]
-	}
+  "users": {
+    "user": [
+      {
+        "id": 1,
+        "name": "Agata",
+        "events": [1, 2, 5]
+      },
+      {
+        "id": 2,
+        "name": "Tomek",
+        "events": [1, 3, 5]
+      },
+      {
+        "id": 3,
+        "name": "Kasia",
+        "events": [2, 3, 5]
+      }
+    ]
+  },
+  "events": {
+    "event": [
+      {
+        "id": 1,
+        "name": "Kawa",
+        "startHour":"15:30",
+        "endHour": "17:00",
+        "day": "23.03.2024"
+      },
+      {
+        "id": 2,
+        "name": "Lunch",
+         "startHour":"12:30",
+        "endHour": "13:30",
+        "day": "22.03.2024"
+      },
+      {
+        "id": 3,
+        "name": "Siłownia",
+        "startHour":"17:30",
+        "endHour": "19:00",
+        "day": "23.03.2024"
+      },
+      {
+        "id": 4,
+        "name": "Kino",
+        "startHour":"21:30",
+        "endHour": "23:00",
+        "day": "23.03.2024"
+      },
+      {
+        "id": 5,
+        "name": "Praca",
+        "startHour":"7:30",
+        "endHour": "15:50",
+        "day": "21.03.2024"
+      }
+    ]
+  }
 }
