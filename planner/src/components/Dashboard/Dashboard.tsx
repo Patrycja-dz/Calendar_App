@@ -1,14 +1,34 @@
+// import { getDayIndexFromDate } from "../../helpers/getDayIndexFrmDate";
+// import Timeline from "../Timeline.tsx/Timeline";
+
+// const Dashboard = ({ data, currentDay }) => {
+//   const hours = Array.from({ length: 18 }, (_, i) => i + 7);
+
+//   return (
+//     <Timeline
+//       events={data?.map((event) => ({
+//         ...event,
+//         day: event.day,
+//       }))}
+//       currentDay={currentDay}
+//     />
+//   );
+// };
+// export default Dashboard;
+// Dashboard.js
+import { getDayIndexFromDate } from "../../helpers/getDayIndexFrmDate";
 import Timeline from "../Timeline.tsx/Timeline";
 
-const Dashboard = () => {
-  const dummyEvents = [
-    { day: 0, startHour: 8, endHour: 16, title: "Work" },
-    { day: 2, startHour: 12, endHour: 13, title: "Lunch" },
-    { day: 3, startHour: 10, endHour: 11, title: "Doctor" },
-    { day: 4, startHour: 12, endHour: 14, title: "Meeting" },
-  ];
+const Dashboard = ({ data, currentDay }) => {
+  const parsedEvents = data?.map((event) => ({
+    ...event,
+    startHour: parseInt(event.startHour.split(":")[0]),
+    endHour: parseInt(event.endHour.split(":")[0]),
+    day: new Date(event.day.split(".").reverse().join("-")).getDate(),
+    dayIndex: getDayIndexFromDate(event.day),
+  }));
 
-  return <Timeline events={dummyEvents} />;
+  return <Timeline events={parsedEvents} />;
 };
 
 export default Dashboard;
