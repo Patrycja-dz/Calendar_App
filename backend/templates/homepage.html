@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello <name>!</title>
+</head>
+<body>
+<h2>Welcome To Calendar APP {{name}}!</h2>
+<h4>Flask: Rendering Templates</h4>
+<a href="{{ url_for('new_event') }}">New Event</a>
+<a href="{{ url_for('my_invitations') }}">My Invitations</a>
+{% block body %}
+
+
+<p>This is a Flask application.</p>
+
+
+{% endblock %}
+</body>
+</html>
